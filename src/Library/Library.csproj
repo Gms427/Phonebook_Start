@@ -6,5 +6,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WhatsAppLibrary\WhatsAppLibrary.csproj" />
+    <ProjectReference Include="..\TwitterLibrary\TwitterLibrary.csproj" />
   </ItemGroup>
 </Project>

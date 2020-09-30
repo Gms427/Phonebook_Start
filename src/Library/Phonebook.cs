@@ -31,5 +31,11 @@ namespace Library
 
             return result;
         }
+
+        public void AddContact(string name)
+        {
+            Contact newContact = new Contact(name);
+            this.persons.Add(newContact);
+        }
     }
 }

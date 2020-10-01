@@ -31,5 +31,26 @@ namespace Library
 
             return result;
         }
+        public void RemoveContact(string[] name)
+        {
+            List<Contact> rContacts;
+            rContacts = Search(name);
+            foreach(Contact rContact in rContacts)
+            {
+                persons.Remove(rContact);
+            }
+        }
+        public void SendMessage(IMessageChannel channel, string Text, string[] names)
+        {
+            List<Contact> destinatarios = Search(names);
+            foreach(Contact destinatario in destinatarios)
+            {
+                Message message = new Message(destinatario.Name, Owner.Name);
+                message.Text = Text;
+                channel.Send(message);
+            }
+            
+
+        }
     }
 }

@@ -29,16 +29,18 @@ namespace Program
 
             phonebook.SendMessage(wppChannel, wppMsg, new string[]{ "Gms" });
 
-            // Enviar un SMS a algunos contactos
+            // Enviar un mensaje por Twitter a algunos contactos
 
-            string consumerKey = "CONSUMERKEY";
-            string consumerKeySecret = "CONSUMERKEYSECRET";
-            string accessToken = "ACCESSTOKEN";
-            string accessTokenSecret = "ACCESSTOKENSECRET";
+            string consumerKey = "";
+            string consumerKeySecret = "";
+            string accessToken = "";
+            string accessTokenSecret = "";
             TwitterChannel twitter = new TwitterChannel(consumerKey, consumerKeySecret, accessToken, accessTokenSecret);
-            Message messageg = new Message("PooUcu", "809185528457338880");
-            messageg.Text = "Hola! Todo bien?";
-            twitter.Send(messageg);
+            
+            phonebook.AddContact("Gio","809185528457338880");
+            Message twittermessage = new Message("PooUcu", "809185528457338880");
+            twittermessage.Text = "Hola! Todo bien?";
+            phonebook.SendMessage(twitter, twittermessage, new string[]{ "Gio" });
         }
     }
 }

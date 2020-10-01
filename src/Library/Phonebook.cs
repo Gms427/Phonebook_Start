@@ -39,6 +39,7 @@ namespace Library
             newContact.Phone = phone;
             this.persons.Add(newContact);
         }
+    
         public void RemoveContact(string[] name)
         {
             List<Contact> rContacts;
@@ -48,6 +49,7 @@ namespace Library
                 persons.Remove(rContact);
             }
         }
+        
         public void SendMessage(IMessageChannel channel, IMessage message, string[] names)
         {
             List<Contact> destinatarios = Search(names);

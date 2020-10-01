@@ -5,6 +5,7 @@ namespace Library
     public class TwitterChannel : IMessageChannel
     {
         private TwitterMessage twitter;
+
         public TwitterChannel(string consumerKey,string consumerKeySecret, string accessToken, string accessTokenSecret)
         {
             twitter = new TwitterMessage(consumerKey, consumerKeySecret, accessToken, accessTokenSecret);

@@ -10,9 +10,9 @@ namespace Library
         {
             this.whatsAppApi = new WhatsAppApi(accountSid, authToken);
         }
-        public void Send(Message message)
+        public void Send(IMessage message, Contact contact)
         {
-            this.whatsAppApi.Send(message.To, message.Text);
+            this.whatsAppApi.Send(contact.Phone, message.Text);
         }
     }
 }

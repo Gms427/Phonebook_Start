@@ -1,6 +1,6 @@
 namespace Library
 {
-    public class Message
+    public class Message: IMessage
     {
         public Message(string from, string to)
         {

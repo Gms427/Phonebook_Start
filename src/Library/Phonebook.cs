@@ -31,6 +31,15 @@ namespace Library
 
             return result;
         }
+
+        public void AddContact(string name, string userName = null, string phone = null)
+        {
+            Contact newContact = new Contact(name);
+            newContact.UserName = userName;
+            newContact.Phone = phone;
+            this.persons.Add(newContact);
+        }
+    
         public void RemoveContact(string[] name)
         {
             List<Contact> rContacts;
@@ -40,17 +49,15 @@ namespace Library
                 persons.Remove(rContact);
             }
         }
-        public void SendMessage(IMessageChannel channel, string Text, string[] names)
+        
+        public void SendMessage(IMessageChannel channel, IMessage message, string[] names)
         {
             List<Contact> destinatarios = Search(names);
             foreach(Contact destinatario in destinatarios)
             {
-                Message message = new Message(destinatario.Name, Owner.Name);
-                message.Text = Text;
-                channel.Send(message);
+                IMessage msg = new Message(this.Owner.Name, destinatario.Name);
+                channel.Send(message, destinatario);
             }
-            
-
         }
     }
 }

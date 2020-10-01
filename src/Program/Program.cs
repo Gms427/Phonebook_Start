@@ -14,16 +14,16 @@ namespace Program
             Phonebook phonebook = new Phonebook(contact);
 
             // Agregar contactos a la lista
-            phonebook.AddContact("Gms", null, "+59898185861");
+            phonebook.AddContact("Gms", null, "+11111111111");
 
             // Enviar un correo a algunos contactos
 
 
             // Enviar un WhatsApp a algunos contactos
-            Message wppMsg = new Message("Gms", "+59896011626");
+            Message wppMsg = new Message("Gms", "+11111111111");
             wppMsg.Text = "Mensaje de prueba2";
 
-            const string accountSid = "AC52493b284c82ba2c6b196ef82e412576";
+            const string accountSid = "";
             const string authToken = "";
             IMessageChannel wppChannel = new WhatsAppMessageChanel(accountSid, authToken);
 
